@@ -12,4 +12,31 @@ for bracket in brackets:
         if counter == -1:
             print(position_counter)
 
+
+
 print(counter)
+print("neu:")
+# ( == +1
+# ) == -1
+print(brackets.count("(") - brackets.count(")"))
+
+mapping = { '(': +1, ')': -1 }
+print(sum(mapping[bracket] for bracket in brackets)) #ListComprehension
+print(sum(map(lambda bracket: mapping[bracket], brackets)))
+
+
+counter = 0
+position_counter = 0
+mapping = { '(': +1, ')': -1 }
+mapped = []
+for bracket in brackets:
+    mapped.append(mapping[bracket])
+print(sum(mapped))
+#print(counter)
+
+def mapping(bracket):
+    if bracket == "(":
+        return +1
+    if bracket == ")":
+        return -1
+mapping(bracket)
